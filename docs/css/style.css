@@ -174,3 +174,62 @@ a {
         font-size: 24px;
     }
 }
+
+.fruit-table {
+    padding: 20px;
+}
+
+.fruit-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.fruit-table th, .fruit-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.fruit-table thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.fruit-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.fruit-table tbody tr:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+@media (max-width: 768px) {
+    .fruit-table table, .fruit-table thead, .fruit-table tbody, .fruit-table th, .fruit-table td, .fruit-table tr {
+        display: block;
+    }
+
+    .fruit-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .fruit-table tr {
+        margin: 0 0 1rem 0;
+    }
+
+    .fruit-table td {
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+
+    .fruit-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
