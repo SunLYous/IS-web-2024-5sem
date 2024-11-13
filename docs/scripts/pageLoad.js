@@ -12,14 +12,3 @@
         }
     });
 })();
-
-
-(function () {
-    const currentPath = document.location.pathname;
-    const menuItems = document.querySelectorAll('.menu .list li a');
-    menuItems.forEach((menuItem) => {
-        if (menuItem.getAttribute('href') === currentPath) {
-            menuItem.classList.add('active');
-        }
-    });
-})();
