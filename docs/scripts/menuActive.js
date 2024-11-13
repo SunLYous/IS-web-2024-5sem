@@ -1,14 +1,18 @@
 ﻿(function () {
-    const currentPath = document.location.pathname; // Получаем текущий путь
-    console.log("Текущий путь:", currentPath); // Лог текущего пути
-    const menuItems = document.querySelectorAll('.menu .list li a'); // Находим все пункты меню
+    const currentPath = document.location.pathname;
+    const pathSegments = currentPath.split('/');
+    const lastSegment = pathSegments[pathSegments.length - 1];
+    const menuItems = document.querySelectorAll('.menu .list li a');
 
     menuItems.forEach((menuItem) => {
-        console.log("Проверка пункта меню:", menuItem.getAttribute('href')); // Лог href каждого пункта
-        // Проверяем, совпадает ли href пункта меню с текущим путем
-        if (menuItem.getAttribute('href') === currentPath) {
-            menuItem.classList.add('active'); // Добавляем класс active
-            console.log("Добавлен класс active к:", menuItem); // Лог добавления класса
+        const href = menuItem.getAttribute('href');
+        console.log("Проверка пункта меню:", href);
+
+        const hrefSegments = href.split('/');
+        const lastHrefSegment = hrefSegments[hrefSegments.length - 1];
+
+        if (lastHrefSegment === lastSegment) {
+            menuItem.classList.add('active');
         }
     });
 })();
