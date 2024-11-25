@@ -1,10 +1,61 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Azerfruits</title>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/colors.css" rel="stylesheet"/>
+    <script src="../scripts/pageLoad.js" defer></script>
+    <script src="../scripts/menuActive.js" defer></script>
 </head>
 <body>
+<header class="header">
+    <div class="logo">
+        <img src="../images/AzerFruitsLogo2.jpg" alt="Логотип Azerfruits"/>
+        <b>Azerfruits</b>
+    </div>
+    <nav class="menu">
+        <ul class="list">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="about.html">О Нас</a></li>
+            <li><a href="products.html">Продукты</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="delivery.html">Доставка</a></li>
+        </ul>
+    </nav>
+</header>
 
+<main class="main">
+    <section class="contact">
+        <h1>Контакты</h1>
+        <p>Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами:</p>
+        <div class="contact-info">
+            <strong>Телефон: +7(904)-00-11-220</strong><br>
+            <strong>Email: <a href="mailto:AzerFruits@mail.ru">AzerFruits@mail.ru</a></strong>
+        </div>
+        <h2>Форма обратной связи</h2>
+        <form action="#" method="post">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+</main>
+
+<footer class="footer">
+    <article>
+        <div class="contacts">
+            <h2>Контакты</h2>
+            <strong>Телефон: +7(904)-00-11-220</strong>
+            <strong>Email: AzerFruits@mail.ru</strong>
+        </div>
+        <p>© 2024 Фрукты и Овощи. Все права защищены.</p>
+    </article>
+</footer>
 </body>
 </html>

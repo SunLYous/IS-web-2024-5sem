@@ -233,3 +233,23 @@ a {
         text-align: left;
     }
 }
+
+.menu .list li a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu .list li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--blue-color);
+}
+
+.menu .list li a.active {
+    color: white; /* Цвет текста для активного пункта */
+    background-color: blue; /* Фоновый цвет для активного пункта */
+    font-weight: bold; /* Жирный шрифт для активного пункта */
+}
+
