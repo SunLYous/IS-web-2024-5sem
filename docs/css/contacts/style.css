@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+.header {
+    height: 75px;
+    width: 100%;
+    background: var(--main_color);
+    display: flex;
+    padding: 0 150px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu .list {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    color: var(--white-color);
+}
+
+.menu .list li a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu .list li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white-color);
+}
+
+.menu .list li a.active {
+    color: var(--white-color);
+    background-color: var(--main_color);
+    font-weight: bold;
+}
+
+.main {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact h1 {
+    font-size: 32px;
+    color: var(--main_color);
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    border: 1px solid var(--gray-color);
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: var(--main_color);
+    color: var(--white-color);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--orange-color);
+}
+
+.footer {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer .contacts {
+    margin-bottom: 15px;
+}
+
+.footer .contacts strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
