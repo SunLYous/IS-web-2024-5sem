@@ -9,8 +9,7 @@
         reviewsContainer.innerHTML = "";
 
         try {
-            const response = await fetch(`https://thingproxy.freeboard.io/fetch/https://store.steampowered.com/appreviews/730?json=1&count=20&language=russian`);
-            const data = await response.json();
+            const response = await fetch(`https://cors-anywhere.herokuapp.com/https://store.steampowered.com/appreviews/730?json=1&count=20&language=russian`);const data = await response.json();
             console.log(data);
             preloader.style.display = "none";
 
