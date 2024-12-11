@@ -18,17 +18,21 @@
                     const commentElement = document.createElement("div");
                     commentElement.classList.add("comment");
 
-                    const authorName = comment.name;
-                    const commentBody = comment.body;
+                    const authorName = document.createElement("strong");
+                    authorName.textContent = comment.name;
 
-                    commentElement.innerHTML = `
-                        <strong>${authorName}</strong>
-                        <p>${commentBody}</p>
-                    `;
+                    const commentBody = document.createElement("p");
+                    commentBody.textContent = comment.body;
+
+                    commentElement.appendChild(authorName);
+                    commentElement.appendChild(commentBody);
+
                     commentsContainer.appendChild(commentElement);
                 });
             } else {
-                commentsContainer.innerHTML = "<p>Нет комментариев для отображения.</p>";
+                const noCommentsMessage = document.createElement("p");
+                noCommentsMessage.textContent = "Нет комментариев для отображения.";
+                commentsContainer.appendChild(noCommentsMessage);
             }
         } catch (error) {
             preloader.style.display = "none";
