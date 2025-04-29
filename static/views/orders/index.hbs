@@ -1,0 +1,21 @@
+﻿<h1>Список заказов</h1>
+<a href="/orders/add">➕ Новый заказ</a>
+<ul>
+  {{#each orders}}
+    <li>
+      <strong>Заказ #{{this.id}}</strong> — Пользователь: {{this.userId}}
+      <a href="/orders/{{this.id}}">👁 Смотреть</a>
+      <a href="/orders/{{this.id}}/edit">✏️ Редактировать</a>
+      <form action="/orders/{{this.id}}/delete" method="POST" style="display:inline;">
+        <button type="submit">❌ Удалить</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+<script>
+  const source = new EventSource('/orders/events');
+  source.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+    toastr.info(`Заказ #${data.order.id} был ${data.type}`);
+  };
+</script>

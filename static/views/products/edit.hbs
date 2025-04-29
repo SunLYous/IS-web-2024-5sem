@@ -1,0 +1,17 @@
+﻿
+<h1>Редактировать товар</h1>
+
+<form action="/products/{{product.id}}" method="POST">
+  <label>Название</label><br>
+  <input name="name" value="{{product.name}}" required><br><br>
+
+  <label>Цена</label><br>
+  <input name="price" type="number" value="{{product.price}}" required><br><br>
+
+  <label>ID категории</label><br>
+  <input name="categoryId" type="number" value="{{product.categoryId}}" required><br><br>
+
+  <button type="submit">Сохранить</button>
+</form>
+
+<a href="/products">← Назад к списку</a>

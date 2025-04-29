@@ -1,0 +1,6 @@
+﻿<h1>Редактировать категорию</h1>
+<form action="/categories/{{category.id}}" method="POST">
+  <input name="name" value="{{category.name}}" required>
+  <button type="submit">Сохранить</button>
+</form>
+<a href="/categories">← Назад</a>

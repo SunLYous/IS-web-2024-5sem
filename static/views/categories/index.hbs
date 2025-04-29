@@ -1,0 +1,21 @@
+﻿<h1>Список категорий</h1>
+<a href="/categories/add">➕ Добавить категорию</a>
+<ul>
+  {{#each categories}}
+    <li>
+      <strong>{{this.name}}</strong>
+      <a href="/categories/{{this.id}}">👁 Смотреть</a>
+      <a href="/categories/{{this.id}}/edit">✏️ Редактировать</a>
+      <form action="/categories/{{this.id}}/delete" method="POST" style="display:inline;">
+        <button type="submit">❌ Удалить</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+<script>
+  const source = new EventSource('/categories/events');
+  source.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+    alert(`Категория ${data.category.name} была ${data.type}`);
+  };
+</script>

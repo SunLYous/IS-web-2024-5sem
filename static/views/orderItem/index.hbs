@@ -1,0 +1,21 @@
+﻿<h1>Список позиций заказа</h1>
+<a href="/order-items/add">➕ Добавить позицию</a>
+<ul>
+  {{#each items}}
+    <li>
+      <strong>Количество:</strong> {{this.quantity}} | Товар ID: {{this.productId}} | Заказ ID: {{this.orderId}}
+      <a href="/order-items/{{this.id}}">👁 Смотреть</a>
+      <a href="/order-items/{{this.id}}/edit">✏️ Редактировать</a>
+      <form action="/order-items/{{this.id}}/delete" method="POST" style="display:inline;">
+        <button type="submit">❌ Удалить</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+<script>
+  const source = new EventSource('/order-items/events');
+  source.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+    toastr.info(`Позиция заказа обновлена: ID ${data.item.id} — ${data.type}`);
+  };
+</script>

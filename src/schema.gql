@@ -1,0 +1,177 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Категория"""
+type CategoryGraphqlModel {
+  """Идентификатор категории"""
+  id: Int!
+
+  """Название категории"""
+  name: String!
+}
+
+input CreateCategoryInput {
+  """Название категории (обязательно)"""
+  name: String!
+}
+
+"""Данные для создания пользователя"""
+input CreateUserInput {
+  """Электронная почта пользователя"""
+  email: String!
+
+  """Имя пользователя"""
+  name: String!
+}
+
+type Mutation {
+  createCategory(createCategoryInput: CreateCategoryInput!): CategoryGraphqlModel!
+  createOrder(createOrderInput: OrderCreateInput!): OrderGraphqlModel!
+  createOrderItem(createOrderItemInput: OrderItemCreateInput!): OrderItemGraphqlModel!
+  createProduct(createProductInput: ProductCreateInput!): ProductGraphqlModel!
+  createUser(createUserInput: CreateUserInput!): UserGraphqlModel!
+  deleteUser(id: Int!): UserGraphqlModel!
+  removeCategory(id: Int!): CategoryGraphqlModel
+  removeOrder(id: Int!): OrderGraphqlModel!
+  removeOrderItem(id: Int!): OrderItemGraphqlModel!
+  removeProduct(id: Int!): ProductGraphqlModel!
+  updateCategory(id: Int!, updateCategoryInput: UpdateCategoryInput!): CategoryGraphqlModel!
+  updateOrder(id: Int!, updateOrderInput: OrderUpdateInput!): OrderGraphqlModel!
+  updateOrderItem(id: Int!, updateOrderItemInput: OrderItemUpdateInput!): OrderItemGraphqlModel!
+  updateProduct(id: Int!, updateProductInput: ProductUpdateInput!): ProductGraphqlModel!
+  updateUser(id: Int!, updateUserInput: UpdateUserInput!): UserGraphqlModel!
+}
+
+input OrderCreateInput {
+  userId: Int!
+}
+
+"""Заказ"""
+type OrderGraphqlModel {
+  """Идентификатор заказа"""
+  id: Int!
+
+  """Идентификатор пользователя, сделавшего заказ"""
+  userId: Int!
+}
+
+input OrderItemCreateInput {
+  orderId: Int!
+  productId: Int!
+  quantity: Int!
+}
+
+"""Позиция заказа"""
+type OrderItemGraphqlModel {
+  """Идентификатор позиции заказа"""
+  id: Int!
+
+  """Идентификатор заказа"""
+  orderId: Int!
+
+  """Идентификатор товара"""
+  productId: Int!
+
+  """Количество товаров"""
+  quantity: Int!
+}
+
+input OrderItemUpdateInput {
+  orderId: Int!
+  productId: Int!
+  quantity: Int!
+}
+
+input OrderUpdateInput {
+  userId: Int!
+}
+
+input ProductCreateInput {
+  """Идентификатор категории продукта"""
+  categoryId: Int!
+
+  """Название продукта"""
+  name: String!
+
+  """Цена продукта"""
+  price: Float!
+}
+
+"""Продукт"""
+type ProductGraphqlModel {
+  """Категория продукта"""
+  category: CategoryGraphqlModel!
+
+  """Идентификатор категории продукта"""
+  categoryId: Int!
+
+  """Идентификатор продукта"""
+  id: Int!
+
+  """Название продукта"""
+  name: String!
+
+  """Цена продукта"""
+  price: Float!
+}
+
+"""Входные данные для обновления продукта"""
+input ProductUpdateInput {
+  """Идентификатор категории продукта"""
+  categoryId: Float!
+
+  """Описание продукта"""
+  description: String!
+
+  """Идентификатор продукта"""
+  id: Int!
+
+  """Название продукта"""
+  name: String!
+
+  """Цена продукта"""
+  price: Float!
+}
+
+type Query {
+  categories: [CategoryGraphqlModel!]!
+  category(id: Int!): CategoryGraphqlModel
+  order(id: Int!): OrderGraphqlModel!
+  orderItem(id: Int!): OrderItemGraphqlModel!
+  orderItems: [OrderItemGraphqlModel!]!
+  orders: [OrderGraphqlModel!]!
+  product(id: Int!): ProductGraphqlModel
+  products: [ProductGraphqlModel!]!
+  user(id: Int!): UserGraphqlModel!
+  users: [UserGraphqlModel!]!
+}
+
+input UpdateCategoryInput {
+  """Название категории"""
+  name: String
+}
+
+"""Данные для обновления пользователя"""
+input UpdateUserInput {
+  """Электронная почта пользователя"""
+  email: String
+
+  """Идентификатор пользователя"""
+  id: Int!
+
+  """Имя пользователя"""
+  name: String
+}
+
+"""Пользователь"""
+type UserGraphqlModel {
+  """Электронная почта пользователя"""
+  email: String!
+
+  """Идентификатор пользователя"""
+  id: Int!
+
+  """Имя пользователя"""
+  name: String!
+}

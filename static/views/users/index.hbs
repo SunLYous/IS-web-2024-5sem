@@ -1,0 +1,31 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+<h1>Список пользователей</h1>
+<a href="/users/add">➕ Добавить пользователя</a>
+<ul>
+  {{#each users}}
+    <li>
+      <strong>{{this.name}}</strong> ({{this.email}} — {{this.phone}})
+      <a href="/users/{{this.id}}">👁 Смотреть</a>
+      <a href="/users/{{this.id}}/edit">✏️ Редактировать</a>
+      <form action="/users/{{this.id}}/delete" method="POST" style="display:inline;">
+        <button type="submit">❌ Удалить</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+<style>
+  #toast-container {
+    top: 1rem;
+    right: 1rem;
+  }
+</style>
+
+<script>
+  const source = new EventSource('/users/events');
+  source.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+    toastr.info(`Пользователь ${data.user.name} был ${data.type}`);
+  };
+</script>

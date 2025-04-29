@@ -1,0 +1,29 @@
+﻿<link rel="stylesheet" href="./css/style.css" type="text/css">
+<link rel="stylesheet" href="./css/colors.css" type="text/css">
+<h1>Список товаров</h1>
+
+<a href="/products/add">➕ Добавить товар</a>
+
+<ul>
+  {{#each products}}
+    <li>
+      <strong>{{this.name}}</strong> — {{this.price}} ₽
+      [Категория ID: {{this.categoryId}}]
+      <a href="/products/{{this.id}}">👁 Смотреть</a>
+      <a href="/products/{{this.id}}/edit">✏️ Редактировать</a>
+      <form action="/products/{{this.id}}/delete" method="POST" style="display:inline;">
+        <button type="submit">❌ Удалить</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+
+<hr>
+
+<script>
+  const source = new EventSource('/products/events');
+  source.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+    alert(`Событие: ${data.type}, товар: ${data.product.name}`);
+  };
+</script>

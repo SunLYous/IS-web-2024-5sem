@@ -1,0 +1,8 @@
+﻿<h1>Редактировать позицию</h1>
+<form action="/order-items/{{item.id}}" method="POST">
+  <input name="quantity" type="number" value="{{item.quantity}}" required>
+  <input name="productId" type="number" value="{{item.productId}}" required>
+  <input name="orderId" type="number" value="{{item.orderId}}" required>
+  <button type="submit">Сохранить изменения</button>
+</form>
+<a href="/order-items">← Назад</a>

@@ -1,0 +1,6 @@
+﻿<h1>Редактировать заказ</h1>
+<form action="/orders/{{order.id}}" method="POST">
+  <input name="userId" type="number" value="{{order.userId}}" required>
+  <button type="submit">Сохранить</button>
+</form>
+<a href="/orders">← Назад</a>

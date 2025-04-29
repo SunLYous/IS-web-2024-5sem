@@ -1,0 +1,7 @@
+﻿<h1>Редактировать пользователя</h1>
+<form action="/users/{{user.id}}" method="POST">
+  <input name="email" value="{{user.email}}" required>
+  <input name="name" value="{{user.name}}" required>
+  <button type="submit">Сохранить</button>
+</form>
+<a href="/users">← Назад</a>

@@ -1,0 +1,17 @@
+﻿
+<h1>Создание нового товара</h1>
+
+<form action="/products" method="POST">
+  <label>Название</label><br>
+  <input name="name" placeholder="Название товара" required><br><br>
+
+  <label>Цена</label><br>
+  <input name="price" type="number" placeholder="Цена" required><br><br>
+
+  <label>ID категории</label><br>
+  <input name="categoryId" type="number" placeholder="1" required><br><br>
+
+  <button type="submit">Сохранить</button>
+</form>
+
+<a href="/products">← Назад к списку</a>
