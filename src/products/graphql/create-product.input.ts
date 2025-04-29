@@ -10,7 +10,4 @@ export class ProductCreateInput {
 
   @Field(() => Int, { description: 'Идентификатор категории продукта' })
   categoryId: number;
-
-  @Field({ nullable: true, description: 'URL изображения продукта' })
-  image?: string;
 }

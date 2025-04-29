@@ -11,16 +11,4 @@ export class UpdateProductDto {
   @IsOptional()
   @IsNumber()
   price?: number;
-
-  @ApiPropertyOptional({ example: 1 })
-  @IsOptional()
-  @IsNumber()
-  categoryId?: number;
-
-  @ApiPropertyOptional({
-    example: 'https://storage.yandexcloud.net/azerfruits/yourimage.jpg',
-  })
-  @IsOptional()
-  @IsString()
-  image?: string;
 }

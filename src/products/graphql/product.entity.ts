@@ -3,21 +3,18 @@ import { CategoryGraphqlModel } from 'src/categories/graphql/category.graphql.mo
 
 @ObjectType({ description: 'Продукт' })
 export class ProductGraphqlModel {
-  @Field(() => Int)
+  @Field(() => Int, { description: 'Идентификатор продукта' })
   id: number;
 
-  @Field()
+  @Field({ description: 'Название продукта' })
   name: string;
 
-  @Field(() => Float)
+  @Field(() => Float, { description: 'Цена продукта' })
   price: number;
 
-  @Field(() => Int)
-  categoryId: number;
-
-  @Field(() => CategoryGraphqlModel)
+  @Field(() => CategoryGraphqlModel, { description: 'Категория продукта' })
   category: CategoryGraphqlModel;
 
-  @Field({ nullable: true })
-  image?: string;
+  @Field(() => Int, { description: 'Идентификатор категории продукта' })
+  categoryId: number;
 }

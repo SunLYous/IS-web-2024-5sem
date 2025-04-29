@@ -1,5 +1,5 @@
-import { IsString, IsNumber, IsOptional } from 'class-validator';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { IsString, IsNumber } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateProductDto {
   @ApiProperty({ example: 'Яблоко' })
@@ -13,11 +13,4 @@ export class CreateProductDto {
   @ApiProperty({ example: 1 })
   @IsNumber()
   categoryId: number;
-
-  @ApiPropertyOptional({
-    example: 'https://storage.yandexcloud.net/azerfruits/yourimage.jpg',
-  })
-  @IsOptional()
-  @IsString()
-  image?: string;
 }

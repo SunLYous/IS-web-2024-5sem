@@ -6,16 +6,9 @@ import { AppModule } from './app.module';
 import * as process from 'node:process';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
-import { LoggingInterceptor } from './logging/logging.interceptor';
-import { ElapsedTimeInterceptor } from './elapsed-time-interceptor/elapsed-time-interceptor.interceptor';
-import { CacheInterceptor } from './etag/etag.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-
-  app.useGlobalInterceptors(new LoggingInterceptor());
-  app.useGlobalInterceptors(new ElapsedTimeInterceptor());
-  app.useGlobalInterceptors(new CacheInterceptor());
 
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
